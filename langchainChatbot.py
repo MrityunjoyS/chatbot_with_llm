@@ -42,8 +42,8 @@ def get_chunk_text(text):
 
 def get_vector_store(text_chunks):
     
-    embedding_model = r'baai' 
-    embeddings = HuggingFaceEmbeddings(model_name=embedding_model, model_kwargs={"device": DEVICE})
+    #embedding_model = r'baai' 
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5", model_kwargs={"device": DEVICE})
     
 
     vectorstore = FAISS.from_texts(texts = text_chunks, embedding = embeddings)
